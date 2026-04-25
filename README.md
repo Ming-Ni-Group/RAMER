@@ -23,6 +23,7 @@ Project assets (`Background_library`, `data`, and `model`) are available on Hugg
 ## Environment Setup
 
 ```bash
+git clone https://github.com/Ming-Ni-Group/RAMER.git
 cd ./RAMER
 conda create -n ramer python=3.10 -y
 conda activate ramer
