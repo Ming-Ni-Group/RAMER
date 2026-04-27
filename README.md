@@ -147,3 +147,15 @@ torchrun --nproc_per_node=8 train.py \
   --batch_size 24
 ```
 
+## License
+
+The source code in this repository is licensed under the MIT License.
+See `LICENSE`.
+
+## Third-Party Base Models
+
+RAMER relies on third-party base models (ProtTrans/ProtT5, MolT5, and GearNet).
+These models and their checkpoints remain under their original upstream licenses.
+See `THIRD_PARTY_MODELS.md` for source links, license links, and usage scope
+within this project.
+
