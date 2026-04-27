@@ -1,0 +1,74 @@
+RAMER Non-Commercial Research License v1.0
+
+Copyright (c) 2026 RAMER contributors
+
+By downloading, copying, or using this Software, you agree to this License.
+
+1. Definitions
+
+"Software" means the RAMER source code, scripts, model-related code in this
+repository, and accompanying documentation.
+
+"Derivative Works" means modifications, adaptations, extensions, or other works
+based on the Software.
+
+"Commercial Use" means any use intended for commercial advantage or monetary
+compensation, including but not limited to:
+- selling, licensing, sublicensing, or distributing the Software (or
+  Derivative Works) as part of a paid product or service;
+- using the Software to provide paid services (including API, SaaS, consulting,
+  contract research, or fee-for-service work);
+- using the Software internally to support commercial product development,
+  operations, or decision-making in a for-profit context.
+
+"Research Use" means non-commercial research, academic, educational, or personal
+use.
+
+2. License Grant (Non-Commercial Only)
+
+Subject to this License, you are granted a non-exclusive, non-transferable,
+revocable license to:
+- use the Software for Research Use;
+- copy and modify the Software for Research Use; and
+- share unmodified or modified copies for Research Use only.
+
+3. Commercial Use Prohibited
+
+You may not make any Commercial Use of the Software or Derivative Works without
+prior written permission from the copyright holders.
+
+4. Redistribution and Derivative Works
+
+If you redistribute the Software or any Derivative Works, you must:
+- include this License and all existing copyright notices;
+- clearly indicate that changes were made (for modified versions); and
+- not imply endorsement by the RAMER contributors.
+
+5. Third-Party Components
+
+This repository may rely on third-party models, code, or data with their own
+licenses and terms. You are responsible for complying with all applicable
+third-party licenses.
+
+6. No Trademark Rights
+
+This License does not grant any rights to use any contributor names, logos, or
+trademarks, except as necessary for reasonable attribution.
+
+7. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, AND NON-INFRINGEMENT.
+
+8. Limitation of Liability
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES, OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT, OR OTHERWISE, ARISING
+FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+
+9. Termination
+
+This License terminates automatically if you violate any term. Upon termination,
+you must stop using the Software and destroy all copies under your control.
