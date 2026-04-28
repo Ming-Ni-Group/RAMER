@@ -44,7 +44,7 @@ conda activate ramer
 # Install PyTorch according to your CUDA/CPU environment
 # Example (edit based on your machine): pip install torch torchvision torchaudio
 
-pip install transformers tqdm sentencepiece protobuf scikit-learn h5py biopython xgboost peft
+pip install transformers tqdm sentencepiece protobuf scikit-learn h5py biopython xgboost==1.6.2 peft
 ```
 
 ## Data and Model Preparation
