@@ -131,8 +131,8 @@ def evaluate_ec_csv_with_background_dict(
 
 if __name__ == "__main__":
     # Input paths
-    csv_path = "/root/fsas/A_RAMER/data/test_data/new392_result.csv"
-    background_library_dict_json = "/root/fsas/A_RAMER/Background_library/clean100_set_dict.json"
+    csv_path = "./data/test_data/new392_result.csv"
+    background_library_dict_json = "./Background_library/clean100_set_dict.json"
 
     evaluate_ec_csv_with_background_dict(
         csv_path=csv_path,
