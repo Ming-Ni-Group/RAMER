@@ -162,7 +162,8 @@ torchrun --nproc_per_node=8 train.py \
 
 ## License
 
-The source code in this repository is licensed under the MIT License.
+The source code in this repository is licensed under the
+RAMER Non-Commercial Research License v1.0.
 See `LICENSE`.
 
 ## Third-Party Base Models
