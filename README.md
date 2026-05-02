@@ -19,10 +19,26 @@ Project assets (`Background_library`, `data`, and `model`) are available on Hugg
 - `binary_enzyme_classifier.py`: enzyme/non-enzyme binary classifier from RAMER embeddings
 - `train.py`: DDP training script
 - `Data2seq/`: sequence/structure/reaction encoders and fusion components
+- `gearnet_process/`: optional PDB → graph HDF5 → GearNet embedding HDF5 pipeline (see `gearnet_process/README.md`)
 
 ## Environment Setup
 
-### Option 1: Automatic install
+### Option 1: Manual install (recommended)
+
+```bash
+git clone https://github.com/Ming-Ni-Group/RAMER.git
+cd ./RAMER
+
+conda create -n ramer python=3.10 -y
+conda activate ramer
+
+# Install PyTorch according to your CUDA/CPU environment
+# Example (edit based on your machine): pip install torch torchvision torchaudio
+
+pip install transformers tqdm sentencepiece protobuf scikit-learn h5py biopython xgboost peft
+```
+
+### Option 2: Automatic install
 
 ```bash
 git clone https://github.com/Ming-Ni-Group/RAMER.git
@@ -31,20 +47,6 @@ cd ./RAMER
 # Create environment directly from ramer.yml
 conda env create -f ramer.yml
 conda activate ramer
-```
-
-### Option 2: Manual install (recommended)
-
-```bash
-git clone https://github.com/Ming-Ni-Group/RAMER.git
-cd ./RAMER
-conda create -n ramer python=3.10 -y
-conda activate ramer
-
-# Install PyTorch according to your CUDA/CPU environment
-# Example (edit based on your machine): pip install torch torchvision torchaudio
-
-pip install transformers tqdm sentencepiece protobuf scikit-learn h5py biopython xgboost==1.6.2 peft
 ```
 
 ## Data and Model Preparation
@@ -57,15 +59,11 @@ Download project resources from [PengJiaMa123/RAMER](https://huggingface.co/Peng
 
 ### Training-only note
 
-To reproduce training, first unzip:
+Training loads GearNet structure embeddings from a single HDF5 file with datasets `ids` and `embeddings` (UniProt accession keys aligned with `--seq_data`). Place that file under the project (for example `./data/gernet_embedding.h5`) or pass its path with `--gearnet_h5_path`.
 
-- `./data/gernet_embedding.zip`
+If you are starting from PDB files and need to build that HDF5 yourself (environment setup, extracting structures, graph HDF5, then GearNet inference), follow the step-by-step instructions in **`gearnet_process/README.md`**. The scripts there produce the same `ids` / `embeddings` layout that `train.py` consumes via `--gearnet_h5_path`.
 
-to get:
-
-- `./data/gernet_embedding` (or pass a custom path via `--gearnet_embedding_path`)
-
-For inference-only usage, this GearNet directory is not required.
+For inference-only usage, this GearNet HDF5 file is not required.
 
 ## Inference Pipeline
 
@@ -153,7 +151,7 @@ CSV columns:
 torchrun --nproc_per_node=8 train.py \
   --seq_data ./data/uniprot_20W_struct_seq_reaction_121_without_new392.json \
   --reaction_data ./data/updated_rhea-reaction-smiles.json \
-  --gearnet_embedding_path ./data/gernet_embedding \
+  --gearnet_h5_path ./data/gernet_embedding.h5 \
   --log_file ./training_t_position_loss.log \
   --model_save_dir ./train_model \
   --epochs 50 \
